@@ -27,8 +27,8 @@
           :messages="getMessages" />
 
         <div
-          v-if="isReceiverTyping"
-          class="chat__message chat__message--right">
+          :class="[isReceiverTyping ? 'chat__typing-loader--visible' : '']"
+          class="chat__typing-loader">
 
           <Loader/>
 
@@ -198,6 +198,17 @@ export default {
       overflow-y: scroll;
 
       padding: 20px;
+
+      .chat__typing-loader{
+        float: right;
+        opacity: 0;
+        transition: .3s opacity;
+
+        &--visible {
+          opacity: 1;
+        }
+
+      }
 
     }
 
