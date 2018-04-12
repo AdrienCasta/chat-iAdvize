@@ -91,7 +91,7 @@ export default {
       const wasAMessageReceived = type === 'newMessage' && payload.author !== this.emitter;
 
       if (wasAMessageReceived) {
-        this.keepNewMessagesVisisble();
+        this.keepNewMessagesVisible();
       }
     });
   },
@@ -147,7 +147,7 @@ export default {
       'typing',
       'stopTyping',
     ]),
-    keepNewMessagesVisisble() {
+    keepNewMessagesVisible() {
       this.$refs.messages
         .scrollTo(0, this.$refs.messages.scrollHeight);
     },
@@ -162,7 +162,7 @@ export default {
         });
         this.currentMessage = '';
 
-        this.keepNewMessagesVisisble();
+        this.keepNewMessagesVisible();
       }
     },
   },
